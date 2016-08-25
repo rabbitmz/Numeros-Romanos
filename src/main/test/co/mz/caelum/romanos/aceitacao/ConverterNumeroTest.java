@@ -1,0 +1,40 @@
+package co.mz.caelum.romanos.aceitacao;
+
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+public class ConverterNumeroTest {
+
+	public static String BASE_URL = "http://localhost:8080";
+	private static WebDriver driver;
+	private ConverterNumeroPage converterNumero;
+	
+	@BeforeClass
+	public static void abreBrowser() {
+		driver = new FirefoxDriver();
+	}
+	
+	@Before
+	public void setUp() {
+		converterNumero = new ConverterNumeroPage(driver);
+	}
+	
+	@AfterClass
+	public static void fechaBrowser() {
+		driver.close();
+	}
+	
+	@Test
+	public void deveConverterNumero()
+	{
+		converterNumero.abreTela();
+		converterNumero.adicionaValores("XX");
+		converterNumero.resultadoDeveSer(20.0);
+	}
+	
+}
