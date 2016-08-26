@@ -40,4 +40,17 @@ public class ConverterNumeroTest {
 		converterNumero.resultadoDeveSer(10.0);
 	}
 	
+	@Test
+	public void deveMostrarMensagemDeErroComValorVazio()
+	{
+		converterNumero.abreTela();
+		converterNumero.adicionaValores(null);
+		converterNumero.contemMenssagem("Valor nao pode estar nulo");
+	}
+	
+	
+	
+	
+	
+	
 }

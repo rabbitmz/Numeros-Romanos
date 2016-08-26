@@ -9,10 +9,13 @@ public class NumeroRomano implements Numero {
 	private static final int _MAXIMO = 5000;
 	private static final int _MINIMO = 1;
 	
-	@NotNull(message="Valor nao pode estar nullo")
+	@NotNull(message="Valor nao pode estar nulo")
 	private String valor;
 	
 	private Hashtable<Character, Integer> correspondentes;
+	
+	public NumeroRomano() {
+	}
 	
 	public NumeroRomano(String valor) 
 	{

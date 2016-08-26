@@ -36,4 +36,8 @@ public class ConverterNumeroPage
 	{
 		Assert.assertTrue(driver.getPageSource().contains(String.valueOf(resultadoEsperado)));
 	}
+	public void contemMenssagem(String mensagem)
+	{
+		Assert.assertTrue(driver.getPageSource().contains(mensagem));
+	}
 }
