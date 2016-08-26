@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class NumeroController 
 {
 	
-	@RequestMapping("/teste")
-	public String teste()
+	@RequestMapping("/converter")
+	public String formConverter()
 	{
-		return "index";
+		return "converterNumero";
 	}
 	
 	

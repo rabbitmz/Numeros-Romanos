@@ -33,8 +33,8 @@ public class ConverterNumeroTest {
 	public void deveConverterNumero()
 	{
 		converterNumero.abreTela();
-		converterNumero.adicionaValores("XX");
-		converterNumero.resultadoDeveSer(20.0);
+		converterNumero.adicionaValores("X");
+		converterNumero.resultadoDeveSer(10.0);
 	}
 	
 }
