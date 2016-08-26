@@ -24,8 +24,8 @@ public class NumeroRomano implements Numero {
 		this.valor = valor;
 	}
 
-	private void isVazio(String valor) {
-		if (valor == null || valor.equals(" ")) {
+	public void isVazio(String valor) {
+		if (valor == null || valor.trim().equals("")) {
 			throw new IllegalArgumentException("Voce Introduziu um valor vazio");
 		}
 	}
@@ -61,14 +61,16 @@ public class NumeroRomano implements Numero {
 
 	@Override
 	public double converteParaDecimal() {
-
+		
 		inicializaCorrespondentes();
+		isVazio(this.valor);
+		transformarMaiusculo();
 		// Tratar casos
 		removeEspacoEmBranco();
 		isMaisQTresLetrasSeguidas();
 		isCaracterValido();
 		isDuplicado();
-		isVazio(this.valor);
+		
 		int valorDecimal = 0;
 		int anterior = 0;
 		int temporario;

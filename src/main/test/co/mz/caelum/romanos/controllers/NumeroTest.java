@@ -63,6 +63,14 @@ public class NumeroTest
 		((NumeroRomano)numeroRomano).isDuplicado();
 	}
 	
+	@Test(expected=IllegalArgumentException.class)
+	public void naoPodeConverterValorVazio()
+	{
+		Numero numeroRomano = builder.constroi();
+		((NumeroRomano)numeroRomano).isVazio(" ");
+	}
+	
+	
 	@Test
 	public void deveRemoverEspacoEmBranco()
 	{
