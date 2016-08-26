@@ -1,11 +1,24 @@
 /**
  * Author: Yuri Wingester
  */
+//
+//$(document).ready(function() {
+//	$('#btnCon').click(function(e) {
+//		$.ajax({
+//			url : 'enviarDados',
+//			data : {
+//				valor : $('#valor').val()
+//			},
+//			success : function(responseText) {
+//				$('#errorLabel').text(responseText);
+//			}
+//		});
+//	});
+//});
 
-function converterEActualizar(valor)
+
+function chamaEnvia()
 {
-	$.post("enviarNumero", {'valor' : valor}, function()
-			{
-				alert("haaa");
-			});
+	$.post("enviarDados",{valor : $('#valor').val}, function(resposta){ $('#errorLabel').text(resposta);});
+
 }

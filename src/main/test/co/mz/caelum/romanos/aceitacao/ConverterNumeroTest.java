@@ -48,9 +48,4 @@ public class ConverterNumeroTest {
 		converterNumero.contemMenssagem("Valor deve ter pelo menos um digito [I,X,C,M,V,L,D]");
 	}
 	
-	
-	
-	
-	
-	
 }

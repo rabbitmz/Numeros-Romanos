@@ -49,4 +49,13 @@ public class NumeroTest
 		((NumeroRomano)numeroRomano).isMaisQTresLetrasSeguidas();
 	}
 	
+	@Test(expected=IllegalArgumentException.class)
+	public void naoDevePermitirCaracterInvalido()
+	{
+		Numero numeroRomano = builder.comValor("XX3").constroi();
+		((NumeroRomano)numeroRomano).isCaracterValido();
+	}
+	
+	
+	
 }

@@ -1,9 +1,9 @@
 package co.mz.caelum.romanos.model;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
 
-import javax.validation.constraints.Max;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 
@@ -12,7 +12,7 @@ public class NumeroRomano implements Numero {
 	private static final int _MAXIMO = 3999;
 	private static final int _MINIMO = 1;
 	
-	@NotNull(message="Valor nao pode estar nulo")
+	
 	@Size(min = 1, max = 15, message="Valor deve ter pelo menos um digito [I,X,C,M,V,L,D]")
 	private String valor;
 	
@@ -63,6 +63,7 @@ public class NumeroRomano implements Numero {
 	public double converteParaDecimal() {
 		inicializaCorrespondentes();
 		isMaisQTresLetrasSeguidas();
+		isCaracterValido();
 		int valorDecimal = 0;
 		int anterior = 0;
 		int temporario;
@@ -95,8 +96,27 @@ public class NumeroRomano implements Numero {
 		{
 			throw new IllegalArgumentException("Numero romano nao pode ter 4 letras repetidas");
 		}
-		
 	}
+	public void isCaracterValido()
+	{
+		List<Character> lista = new ArrayList<>();
+		lista.add('I');
+		lista.add('V');
+		lista.add('X');
+		lista.add('L');
+		lista.add('C');
+		lista.add('D');
+		lista.add('M');
+		
+		for(int i=0; i<this.valor.length();i++)
+		{
+			if(!lista.contains(valor.charAt(i)))
+			{
+				throw  new IllegalArgumentException("Valor contem caracteres invalidos");
+			}
+		}
+	}
+	
 
 	private void inicializaCorrespondentes() {
 		correspondentes = new Hashtable<>();
