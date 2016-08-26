@@ -40,4 +40,9 @@ public class ConverterNumeroPage
 	{
 		Assert.assertTrue(driver.getPageSource().contains(mensagem));
 	}
+
+	public void isTelaCerta(String tela) 
+	{
+		Assert.assertTrue(driver.getCurrentUrl().equals(BASE_URL+"/"+tela));
+	}
 }

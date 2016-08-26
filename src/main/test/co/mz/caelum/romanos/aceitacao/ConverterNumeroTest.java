@@ -56,5 +56,12 @@ public class ConverterNumeroTest {
 		converterNumero.contemMenssagem("Valor contem caracteres invalidos");
 	}
 	
+	@Test
+	public void verificarFluxo()
+	{
+		converterNumero.abreTela();
+		converterNumero.adicionaValores("XX");
+		converterNumero.isTelaCerta("resultado");
+	}
 	
 }
