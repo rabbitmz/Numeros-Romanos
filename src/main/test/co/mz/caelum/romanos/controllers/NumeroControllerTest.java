@@ -15,7 +15,7 @@ public class NumeroControllerTest
 		NumeroRomano numero = new NumeroRomano();
 		numero.atribuiValor("V");
 		double converteParaDecimal = numero.converteParaDecimal();
-		Assert.assertEquals(converteParaDecimal, 5);
+		Assert.assertEquals(converteParaDecimal, 5.0);
 	}
 	
 }

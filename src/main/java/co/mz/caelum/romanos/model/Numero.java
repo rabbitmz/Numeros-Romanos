@@ -4,7 +4,7 @@ public interface Numero
 {
 	double maximo();
 	double minimo();
-	double valor(); 
+	String valor(); 
 	void atribuiValor(Object valor);
-	
+	double converteParaDecimal();
 }
