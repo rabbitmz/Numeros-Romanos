@@ -10,6 +10,13 @@ public class NumeroRomano implements Numero {
 	
 	private Hashtable<Character, Integer> correspondentes;
 	
+	
+	
+	public NumeroRomano(String valor) {
+		
+		this.valor = valor;
+	}
+
 	public String getValor() {
 		return valor;
 	}

@@ -13,4 +13,4 @@ local.properties
 *.war
 *.class
 *.jar
-
+*.exe
