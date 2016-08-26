@@ -2,6 +2,7 @@ package co.mz.caelum.romanos.model;
 
 import java.util.Hashtable;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 
 public class NumeroRomano implements Numero {
@@ -10,6 +11,7 @@ public class NumeroRomano implements Numero {
 	private static final int _MINIMO = 1;
 	
 	@NotNull(message="Valor nao pode estar nulo")
+	@Size(min = 1, max = 15, message="Valor deve ter pelo menos um digito [I,X,C,M,V,L,D]")
 	private String valor;
 	
 	private Hashtable<Character, Integer> correspondentes;

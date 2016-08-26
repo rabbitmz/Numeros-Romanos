@@ -16,7 +16,7 @@
 	<form id="cnrvtRomano" action="enviarDados" method="post">
 		<label> Introduza o Numero Romano :
 		 </label> <input type="text" name="valor" id="valor">
-			 <form:errors path="NumeroRomano.valor" cssClass="error"></form:errors>
+			 <form:errors path="numeroRomano.valor" cssClass="error"></form:errors>
 			<input type="submit"
 			value="Converter" name="btnCon" id="btnCon">
 	</form>

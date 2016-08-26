@@ -36,16 +36,16 @@ public class ConverterNumeroTest {
 	public void deveConverterNumero()
 	{
 		converterNumero.abreTela();
-		converterNumero.adicionaValores("X");
-		converterNumero.resultadoDeveSer(10.0);
+		converterNumero.adicionaValores("XX");
+		converterNumero.resultadoDeveSer(20.0);
 	}
 	
 	@Test
 	public void deveMostrarMensagemDeErroComValorVazio()
 	{
 		converterNumero.abreTela();
-		converterNumero.adicionaValores(null);
-		converterNumero.contemMenssagem("Valor nao pode estar nulo");
+		converterNumero.adicionaValores(" ");
+		converterNumero.contemMenssagem("Valor deve ter pelo menos um digito [I,X,C,M,V,L,D]");
 	}
 	
 	

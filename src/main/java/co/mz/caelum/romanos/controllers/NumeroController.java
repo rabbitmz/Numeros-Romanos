@@ -19,8 +19,9 @@ public class NumeroController {
 
 	@RequestMapping("/enviarDados")
 	public String converteValor(@Valid NumeroRomano numero, BindingResult result, HttpSession httpsession) {
+		
 		if (result.hasFieldErrors("valor")) {
-			return "converter";
+			return "converterNumero";
 		}
 		double resultado = numero.converteParaDecimal();
 		httpsession.setAttribute("resultado", resultado);
