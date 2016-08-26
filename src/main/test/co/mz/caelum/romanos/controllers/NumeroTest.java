@@ -70,5 +70,12 @@ public class NumeroTest
 		((NumeroRomano)numeroRomano).removeEspacoEmBranco();
 		Assert.assertEquals(numeroRomano.valor(), "XIX");
 	}
+	@Test
+	public void deveTransformarParaMaiusculo()
+	{
+		Numero numeroRomano = builder.comValor("xix").constroi();
+		((NumeroRomano)numeroRomano).transformarMaiusculo();
+		Assert.assertEquals(numeroRomano.valor(), "XIX");
+	}
 	
 }

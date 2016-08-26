@@ -20,10 +20,10 @@ public class NumeroRomano implements Numero {
 	}
 
 	public NumeroRomano(String valor) {
-		if (valor == null) {
-			throw new IllegalArgumentException();
+		if (valor == null || valor.equals(" ")) {
+			throw new IllegalArgumentException("Voce Introduziu um valor vazio");
 		}
-		this.valor = valor.toUpperCase();
+		this.valor = valor;
 	}
 
 	public String getValor() {
@@ -127,10 +127,13 @@ public class NumeroRomano implements Numero {
 
 	}
 	
-	
 	public void removeEspacoEmBranco()
 	{
 		this.valor = this.valor.trim();
+	}
+	public void transformarMaiusculo()
+	{
+		this.valor = this.valor.toUpperCase();
 	}
 
 	public void isDuplicado() {
