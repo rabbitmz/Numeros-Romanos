@@ -62,7 +62,7 @@ public class NumeroRomano implements Numero {
 	@Override
 	public double converteParaDecimal() {
 		inicializaCorrespondentes();
-
+		isMaisQTresLetrasSeguidas();
 		int valorDecimal = 0;
 		int anterior = 0;
 		int temporario;

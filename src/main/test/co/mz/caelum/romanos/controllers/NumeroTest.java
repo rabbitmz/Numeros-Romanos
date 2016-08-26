@@ -10,7 +10,7 @@ import co.mz.caelum.romanos.model.NumeroRomano;
 
 
 
-public class NumeroControllerTest 
+public class NumeroTest 
 {
 	private static NumeroBuilder builder;
 	
@@ -38,7 +38,7 @@ public class NumeroControllerTest
 	@Test(expected=IllegalArgumentException.class)
 	public void naoDeveConverterNumeroMaiorMaximo()
 	{
-		Numero numeroRomano = builder.comValor("IVXLCDMM").constroi();
+		Numero numeroRomano = builder.comValor("MMMCMXCVIIV").constroi();
 		numeroRomano.converteParaDecimal();
 	}
 	
@@ -48,8 +48,5 @@ public class NumeroControllerTest
 		Numero numeroRomano = builder.comValor("IIII").constroi();
 		((NumeroRomano)numeroRomano).isMaisQTresLetrasSeguidas();
 	}
-	
-	
-	
 	
 }

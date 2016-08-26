@@ -23,8 +23,19 @@ public class NumeroController {
 		if (result.hasFieldErrors("valor")) {
 			return "converterNumero";
 		}
-		double resultado = numero.converteParaDecimal();
-		httpsession.setAttribute("resultado", resultado);
+		
+		try
+		{
+			double resultado = numero.converteParaDecimal();
+			httpsession.setAttribute("resultado", resultado);	
+		}
+		catch (IllegalArgumentException e) {
+			// setar o valor da mensagem na tela de forma que possamos personalizar 
+			//Deixamos de usar as mensagens do hibernate validator neste ponto
+			System.out.println(e.getMessage());
+			httpsession.setAttribute("mensagemDeErro", e.getMessage());
+		}
+		
 
 		return "redirect:resultado";
 	}
