@@ -56,6 +56,11 @@ public class NumeroTest
 		((NumeroRomano)numeroRomano).isCaracterValido();
 	}
 	
-	
+	@Test
+	public void naoPodeDuplicarLetraV()
+	{
+		Numero numeroRomano = builder.comValor("VV").constroi();
+		((NumeroRomano)numeroRomano).isDuplicado();
+	}
 	
 }
