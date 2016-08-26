@@ -3,19 +3,18 @@ package co.mz.caelum.romanos.model;
 import java.util.Hashtable;
 
 public class NumeroRomano implements Numero {
+	
 	private static final int _MAXIMO = 5000;
 	private static final int _MINIMO = 1;
 	private String valor;
-
+	private Hashtable<Character, Integer> correspondentes;
 	@Override
 	public double maximo() {
-		// TODO Auto-generated method stub
 		return _MAXIMO;
 	}
 
 	@Override
 	public double minimo() {
-		// TODO Auto-generated method stub
 		return _MINIMO;
 	}
 
@@ -32,14 +31,7 @@ public class NumeroRomano implements Numero {
 
 	@Override
 	public double converteParaDecimal() {
-		Hashtable<Character, Integer> correspondentes = new Hashtable<>();
-		correspondentes.put('I', 1);
-		correspondentes.put('X', 10);
-		correspondentes.put('C', 100);
-		correspondentes.put('M', 1000);
-		correspondentes.put('V', 5);
-		correspondentes.put('L', 50);
-		correspondentes.put('D', 500);
+		inicializaCorrespondentes();
 
 		int valorDecimal = 0;
 		int anterior = 0;
@@ -55,5 +47,16 @@ public class NumeroRomano implements Numero {
 		}
 
 		return valorDecimal;
+	}
+
+	private void inicializaCorrespondentes() {
+		correspondentes = new Hashtable<>();
+		correspondentes.put('I', 1);
+		correspondentes.put('X', 10);
+		correspondentes.put('C', 100);
+		correspondentes.put('M', 1000);
+		correspondentes.put('V', 5);
+		correspondentes.put('L', 50);
+		correspondentes.put('D', 500);
 	}
 }
