@@ -20,10 +20,14 @@ public class NumeroRomano implements Numero {
 	}
 
 	public NumeroRomano(String valor) {
+		isVazio(valor);
+		this.valor = valor;
+	}
+
+	private void isVazio(String valor) {
 		if (valor == null || valor.equals(" ")) {
 			throw new IllegalArgumentException("Voce Introduziu um valor vazio");
 		}
-		this.valor = valor;
 	}
 
 	public String getValor() {
@@ -64,7 +68,7 @@ public class NumeroRomano implements Numero {
 		isMaisQTresLetrasSeguidas();
 		isCaracterValido();
 		isDuplicado();
-
+		isVazio(this.valor);
 		int valorDecimal = 0;
 		int anterior = 0;
 		int temporario;

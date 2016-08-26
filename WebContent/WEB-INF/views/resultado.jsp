@@ -13,6 +13,10 @@
 		<p>O resultado da opera&ccedil;&atilde;o &eacute; a seguinte :</p>
 		<br />
 		<p class="titBig">${resultado}</p>
+	
+	<form action="converter" method="post">
+			<input type="submit" value="Converter Novamente">
+	</form>
 	</div>
 </body>
 </html>

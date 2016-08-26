@@ -12,6 +12,11 @@ import co.mz.caelum.romanos.model.NumeroRomano;
 @Controller
 public class NumeroController {
 
+	@RequestMapping("/")
+	public String inicio() {
+		return "index";
+	}
+	
 	@RequestMapping("/converter")
 	public String formConverter() {
 		return "converterNumero";
