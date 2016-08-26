@@ -63,4 +63,12 @@ public class NumeroTest
 		((NumeroRomano)numeroRomano).isDuplicado();
 	}
 	
+	@Test
+	public void deveRemoverEspacoEmBranco()
+	{
+		Numero numeroRomano = builder.comValor(" XIX ").constroi();
+		((NumeroRomano)numeroRomano).removeEspacoEmBranco();
+		Assert.assertEquals(numeroRomano.valor(), "XIX");
+	}
+	
 }

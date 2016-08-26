@@ -44,7 +44,7 @@ public class ConverterNumeroTest {
 	public void deveConverterNumeroComEspacosEmBranco()
 	{
 		converterNumero.abreTela();
-		converterNumero.adicionaValores("XIX ");
+		converterNumero.adicionaValores(" XIX ");
 		converterNumero.resultadoDeveSer(19.0);
 	}
 	

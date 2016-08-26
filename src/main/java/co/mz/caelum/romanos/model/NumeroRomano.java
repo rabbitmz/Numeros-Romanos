@@ -57,13 +57,13 @@ public class NumeroRomano implements Numero {
 
 	@Override
 	public double converteParaDecimal() {
-		
+
 		inicializaCorrespondentes();
-		//Tratar casos 
+		// Tratar casos
 		isMaisQTresLetrasSeguidas();
 		isCaracterValido();
 		isDuplicado();
-		
+
 		int valorDecimal = 0;
 		int anterior = 0;
 		int temporario;
@@ -125,18 +125,18 @@ public class NumeroRomano implements Numero {
 		correspondentes.put('M', 1000);
 
 	}
-
 	
+	
+	public void removeEspacoEmBranco()
+	{
+		this.valor = this.valor.trim();
+	}
+
 	public void isDuplicado() {
-
 		List<String> listaDuplicados = new ArrayList<>();
-
 		listaDuplicados.add("VV");
-
 		listaDuplicados.add("LL");
-
 		listaDuplicados.add("DD");
-
 		for (int i = 0; i < listaDuplicados.size(); i++) {
 
 			if (this.valor.contains(listaDuplicados.get(i))) {
