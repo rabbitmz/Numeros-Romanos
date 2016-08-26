@@ -66,7 +66,7 @@ public class NumeroRomano implements Numero {
 		int valorDecimal = 0;
 		int anterior = 0;
 		int temporario;
-
+		
 		for (int i = this.valor.length() - 1; i >= 0; i--) {
 			temporario = correspondentes.get(valor.charAt(i));
 			if (temporario < anterior)
@@ -82,14 +82,21 @@ public class NumeroRomano implements Numero {
 		return valorDecimal;
 	}
 	
-	private void isMaiorQMaximo(int valorDecimal)
-	{
+	public void isMaiorQMaximo(int valorDecimal)
+	{		
 		if(valorDecimal>_MAXIMO)
 		{
 			throw new IllegalArgumentException("Valor Nao pode ser convertido");
 		}
 	}
-	
+	public void isMaisQTresLetrasSeguidas()
+	{
+		if(this.valor.contains("IIII") || this.valor.contains("VVVV") || this.valor.contains("XXXX") || this.valor.contains("LLLL") || this.valor.contains("CCCC") || this.valor.contains("DDDD") || this.valor.contains("MMMM"))
+		{
+			throw new IllegalArgumentException("Numero romano nao pode ter 4 letras repetidas");
+		}
+		
+	}
 
 	private void inicializaCorrespondentes() {
 		correspondentes = new Hashtable<>();
