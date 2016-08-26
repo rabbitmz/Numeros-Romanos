@@ -11,10 +11,9 @@
 </head>
 <body>
 	<h2>CONVERTA UM NUMERO ROMANO PARA DECIMAL</h2>
-	<form id="cnrvtRomano">
+	<form id="cnrvtRomano" action="enviarDados" method="post">
 		<label> Introduza o Numero Romano : </label> <input type="text"
-			name="numRom" id="numRom"> 
-			
+			name="valor" id="valor"> 
 			<input type="submit"
 			value="Converter" name="btnCon" id="btnCon">
 	</form>

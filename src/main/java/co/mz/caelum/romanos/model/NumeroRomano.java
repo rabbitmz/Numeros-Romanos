@@ -7,7 +7,17 @@ public class NumeroRomano implements Numero {
 	private static final int _MAXIMO = 5000;
 	private static final int _MINIMO = 1;
 	private String valor;
+	
 	private Hashtable<Character, Integer> correspondentes;
+	
+	public String getValor() {
+		return valor;
+	}
+
+	public void setValor(String valor) {
+		this.valor = valor;
+	}
+
 	@Override
 	public double maximo() {
 		return _MAXIMO;

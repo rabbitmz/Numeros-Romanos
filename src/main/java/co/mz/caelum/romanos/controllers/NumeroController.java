@@ -1,10 +1,13 @@
 package co.mz.caelum.romanos.controllers;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import co.mz.caelum.romanos.NumeroFactory;
 import co.mz.caelum.romanos.model.Numero;
+import co.mz.caelum.romanos.model.NumeroRomano;
 
 @Controller
 public class NumeroController 
@@ -17,10 +20,21 @@ public class NumeroController
 	}
 	
 	@RequestMapping("/enviarDados")
-	public void converteValor(String valor)
-	{
-		Numero numeroRomano = new NumeroFactory().getNumero("ROMANO");
-		numeroRomano.atribuiValor(valor);
-		double converteParaDecimal = numeroRomano.converteParaDecimal();
+	public String converteValor(NumeroRomano numero, HttpSession httpsession)
+	{				
+		double resultado = numero.converteParaDecimal();
+		httpsession.setAttribute("resultado", resultado);
+		
+		return "redirect:resultado";
 	}
+	
+	@RequestMapping("/resultado")
+	public String mostraResultado()
+	{
+		return "resultado";
+	}
+	
+	
+	
+	
 }
