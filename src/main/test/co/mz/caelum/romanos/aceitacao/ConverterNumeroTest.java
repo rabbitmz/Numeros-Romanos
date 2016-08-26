@@ -48,4 +48,12 @@ public class ConverterNumeroTest {
 		converterNumero.contemMenssagem("Valor deve ter pelo menos um digito [I,X,C,M,V,L,D]");
 	}
 	
+	@Test
+	public void deveMostrarMensagemDeErroCaracterInvalido()
+	{
+		converterNumero.abreTela();
+		converterNumero.adicionaValores("XX3Z");
+		converterNumero.contemMenssagem("Valor contem caracteres invalidos");
+	}
+	
 }
