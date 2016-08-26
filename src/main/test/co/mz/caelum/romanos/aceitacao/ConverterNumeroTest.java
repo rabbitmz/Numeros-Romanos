@@ -44,7 +44,7 @@ public class ConverterNumeroTest {
 	public void deveMostrarMensagemDeErroComValorVazio()
 	{
 		converterNumero.abreTela();
-		converterNumero.adicionaValores(" ");
+		converterNumero.adicionaValores(new String());
 		converterNumero.contemMenssagem("Valor deve ter pelo menos um digito [I,X,C,M,V,L,D]");
 	}
 	
