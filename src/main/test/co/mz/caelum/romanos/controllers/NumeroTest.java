@@ -56,7 +56,7 @@ public class NumeroTest
 		((NumeroRomano)numeroRomano).isCaracterValido();
 	}
 	
-	@Test
+	@Test(expected=IllegalArgumentException.class)
 	public void naoPodeDuplicarLetraV()
 	{
 		Numero numeroRomano = builder.comValor("VV").constroi();
