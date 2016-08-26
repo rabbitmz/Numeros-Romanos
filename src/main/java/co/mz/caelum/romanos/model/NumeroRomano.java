@@ -1,13 +1,15 @@
 package co.mz.caelum.romanos.model;
 
 import java.util.Hashtable;
+
+import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 
 public class NumeroRomano implements Numero {
 	
-	private static final int _MAXIMO = 5000;
+	private static final int _MAXIMO = 3999;
 	private static final int _MINIMO = 1;
 	
 	@NotNull(message="Valor nao pode estar nulo")
@@ -25,7 +27,7 @@ public class NumeroRomano implements Numero {
 		{
 			throw  new IllegalArgumentException();
 		}
-		this.valor = valor;
+		this.valor = valor.toUpperCase();
 	}
 
 	public String getValor() {
@@ -73,18 +75,31 @@ public class NumeroRomano implements Numero {
 				valorDecimal += temporario;
 			anterior = temporario;
 		}
+		
+		//Tratar casos especiais 
+		isMaiorQMaximo(valorDecimal);
 
 		return valorDecimal;
 	}
+	
+	private void isMaiorQMaximo(int valorDecimal)
+	{
+		if(valorDecimal>_MAXIMO)
+		{
+			throw new IllegalArgumentException("Valor Nao pode ser convertido");
+		}
+	}
+	
 
 	private void inicializaCorrespondentes() {
 		correspondentes = new Hashtable<>();
 		correspondentes.put('I', 1);
-		correspondentes.put('X', 10);
-		correspondentes.put('C', 100);
-		correspondentes.put('M', 1000);
 		correspondentes.put('V', 5);
+		correspondentes.put('X', 10);
 		correspondentes.put('L', 50);
+		correspondentes.put('C', 100);
 		correspondentes.put('D', 500);
+		correspondentes.put('M', 1000);
+		
 	}
 }

@@ -32,7 +32,16 @@ public class NumeroControllerTest
 	public void naoDeveCriarNumerosSemValor()
 	{
 		 builder.comValor(null).constroi();
-	
 	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void naoDeveConverterNumeroMaiorMaximo()
+	{
+		Numero numeroRomano = builder.comValor("IVXLCDMM").constroi();
+		numeroRomano.converteParaDecimal();
+	}
+	
+	
+	
 	
 }
