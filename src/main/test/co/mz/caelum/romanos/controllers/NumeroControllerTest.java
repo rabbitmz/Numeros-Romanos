@@ -6,6 +6,7 @@ import org.testng.Assert;
 
 import co.mz.caelum.romanos.builder.NumeroBuilder;
 import co.mz.caelum.romanos.model.Numero;
+import co.mz.caelum.romanos.model.NumeroRomano;
 
 
 
@@ -39,6 +40,13 @@ public class NumeroControllerTest
 	{
 		Numero numeroRomano = builder.comValor("IVXLCDMM").constroi();
 		numeroRomano.converteParaDecimal();
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void naoPermitirMaisQTresLetrasIguaisSeguidas()
+	{
+		Numero numeroRomano = builder.comValor("IIII").constroi();
+		((NumeroRomano)numeroRomano).isMaisQTresLetrasSeguidas();
 	}
 	
 	
