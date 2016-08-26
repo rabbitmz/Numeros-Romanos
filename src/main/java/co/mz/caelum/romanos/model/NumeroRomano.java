@@ -60,6 +60,7 @@ public class NumeroRomano implements Numero {
 
 		inicializaCorrespondentes();
 		// Tratar casos
+		removeEspacoEmBranco();
 		isMaisQTresLetrasSeguidas();
 		isCaracterValido();
 		isDuplicado();
