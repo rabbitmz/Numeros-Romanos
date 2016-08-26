@@ -15,7 +15,7 @@ public class ConverterNumeroPage
 	}
 	
 	public void abreTela() {
-		driver.get(BASE_URL + "/converterNumero");
+		driver.get(BASE_URL + "/teste");
 	}
 	
 	
