@@ -1,19 +1,25 @@
 package co.mz.caelum.romanos.model;
 
 import java.util.Hashtable;
+import javax.validation.constraints.NotNull;
+
 
 public class NumeroRomano implements Numero {
 	
 	private static final int _MAXIMO = 5000;
 	private static final int _MINIMO = 1;
+	
+	@NotNull(message="Valor nao pode estar nullo")
 	private String valor;
 	
 	private Hashtable<Character, Integer> correspondentes;
 	
-	
-	
-	public NumeroRomano(String valor) {
-		
+	public NumeroRomano(String valor) 
+	{
+		if(valor==null)
+		{
+			throw  new IllegalArgumentException();
+		}
 		this.valor = valor;
 	}
 
