@@ -4,9 +4,7 @@ import org.junit.Test;
 import org.testng.Assert;
 
 import co.mz.caelum.romanos.NumeroFactory;
-import co.mz.caelum.romanos.TipoNumero;
 import co.mz.caelum.romanos.model.Numero;
-import co.mz.caelum.romanos.model.NumeroRomano;
 
 
 

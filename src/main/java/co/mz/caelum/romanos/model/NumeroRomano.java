@@ -3,18 +3,20 @@ package co.mz.caelum.romanos.model;
 import java.util.Hashtable;
 
 public class NumeroRomano implements Numero {
+	private static final int _MAXIMO = 5000;
+	private static final int _MINIMO = 1;
 	private String valor;
 
 	@Override
 	public double maximo() {
 		// TODO Auto-generated method stub
-		return 5000;
+		return _MAXIMO;
 	}
 
 	@Override
 	public double minimo() {
 		// TODO Auto-generated method stub
-		return 1;
+		return _MINIMO;
 	}
 
 	@Override
