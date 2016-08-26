@@ -41,6 +41,14 @@ public class ConverterNumeroTest {
 	}
 	
 	@Test
+	public void deveConverterNumeroComEspacosEmBranco()
+	{
+		converterNumero.abreTela();
+		converterNumero.adicionaValores("XIX ");
+		converterNumero.resultadoDeveSer(19.0);
+	}
+	
+	@Test
 	public void deveMostrarMensagemDeErroComValorVazio()
 	{
 		converterNumero.abreTela();
@@ -63,5 +71,8 @@ public class ConverterNumeroTest {
 		converterNumero.adicionaValores("XX");
 		converterNumero.isTelaCerta("resultado");
 	}
+	
+	
+	
 	
 }
