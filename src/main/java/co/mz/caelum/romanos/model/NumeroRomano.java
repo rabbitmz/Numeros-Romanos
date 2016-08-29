@@ -156,9 +156,16 @@ public class NumeroRomano implements Numero {
 			}
 		}
 	}
+	
+	/**
+	 * Metodo de acesso aos valores do mapa
+	 * @param chave -  chave corresponde a chave do valor do mapa
+	 * @return : Se encontrado o valor correspondede, caso contrario uma excepcao. 
+	 */
 
 	public int getValorDe(Character chave) 
 	{
+	
 		if(correspondentes.get(chave)==null)
 		{
 			throw new IllegalArgumentException("Valor Inexistente");
