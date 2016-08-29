@@ -137,7 +137,7 @@ public class NumeroRomano implements Numero {
 	
 	public void removeEspacoEmBranco()
 	{
-		this.valor = this.valor.trim();
+		this.valor = this.valor.trim().replace(" ", "");
 	}
 	public void transformarMaiusculo()
 	{
