@@ -86,13 +86,23 @@ public class NumeroTest
 		Assert.assertEquals(numeroRomano.valor(), "XIX");
 	}
 	
-	//Metodos pra testar o mapa
+	/**
+	 * Metodo para testar o mapa
+	 * vamos testar o valor do I o resto 'e equivalente
+	 */
 	@Test
 	public void deveRetornarUm()
 	{
 		Numero numeroRomano = builder.comValor("I").constroi();
 		int valor =  ((NumeroRomano)numeroRomano).getValorDe('I');
 		Assert.assertEquals(1, valor);
+	}
+	
+	@Test(expected=IllegalArgumentException.class)
+	public void deveRetornarUmaExcecaoParaValorInexistente()
+	{
+		Numero numeroRomano = builder.comValor("X").constroi();
+		((NumeroRomano)numeroRomano).getValorDe('Z');
 	}
 	
 }
