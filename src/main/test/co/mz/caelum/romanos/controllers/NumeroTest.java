@@ -85,6 +85,13 @@ public class NumeroTest
 		((NumeroRomano)numeroRomano).transformarMaiusculo();
 		Assert.assertEquals(numeroRomano.valor(), "XIX");
 	}
+	@Test
+	public void deveRemoverEspacoEmBrancoDentroDaString()
+	{
+		Numero numeroRomano = builder.comValor(" X I X ").constroi();
+		((NumeroRomano)numeroRomano).removeEspacoEmBranco();
+		Assert.assertEquals(numeroRomano.valor(), "XIX");
+	}
 	
 	/**
 	 * Metodo para testar o mapa
