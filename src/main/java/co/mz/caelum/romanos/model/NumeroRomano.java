@@ -17,10 +17,12 @@ public class NumeroRomano implements Numero {
 	private Hashtable<Character, Integer> correspondentes;
 
 	public NumeroRomano() {
+	
 	}
 
 	public NumeroRomano(String valor) {
 		isVazio(valor);
+		inicializaCorrespondentes();
 		this.valor = valor;
 	}
 
@@ -62,7 +64,7 @@ public class NumeroRomano implements Numero {
 	@Override
 	public double converteParaDecimal() {
 		
-		inicializaCorrespondentes();
+
 		isVazio(this.valor);
 		transformarMaiusculo();
 		// Tratar casos
@@ -155,8 +157,8 @@ public class NumeroRomano implements Numero {
 		}
 	}
 
-	public int getValorDe(String string) {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getValorDe(Character chave) {
+
+		return this.correspondentes.get(chave);
 	}
 }
