@@ -154,4 +154,9 @@ public class NumeroRomano implements Numero {
 			}
 		}
 	}
+
+	public int getValorDe(String string) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

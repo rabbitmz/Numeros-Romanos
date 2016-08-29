@@ -86,4 +86,13 @@ public class NumeroTest
 		Assert.assertEquals(numeroRomano.valor(), "XIX");
 	}
 	
+	//Metodos pra testar o mapa
+	@Test
+	public void deveRetornarUm()
+	{
+		Numero numeroRomano = builder.comValor("I").constroi();
+		int valor =  ((NumeroRomano)numeroRomano).getValorDe("I");
+		Assert.assertEquals(1, valor);
+	}
+	
 }
