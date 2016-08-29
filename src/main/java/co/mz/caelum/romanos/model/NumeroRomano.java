@@ -157,8 +157,13 @@ public class NumeroRomano implements Numero {
 		}
 	}
 
-	public int getValorDe(Character chave) {
-
+	public int getValorDe(Character chave) 
+	{
+		if(correspondentes.get(chave)==null)
+		{
+			throw new IllegalArgumentException("Valor Inexistente");
+		}
+		
 		return this.correspondentes.get(chave);
 	}
 }
