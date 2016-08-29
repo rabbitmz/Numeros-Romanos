@@ -91,7 +91,7 @@ public class NumeroTest
 	public void deveRetornarUm()
 	{
 		Numero numeroRomano = builder.comValor("I").constroi();
-		int valor =  ((NumeroRomano)numeroRomano).getValorDe("I");
+		int valor =  ((NumeroRomano)numeroRomano).getValorDe('I');
 		Assert.assertEquals(1, valor);
 	}
 	
