@@ -17,7 +17,7 @@ public class NumeroRomano implements Numero {
 	private Hashtable<Character, Integer> correspondentes;
 
 	public NumeroRomano() {
-	
+		inicializaCorrespondentes();
 	}
 
 	public NumeroRomano(String valor) {
